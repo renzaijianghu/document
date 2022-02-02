@@ -1,0 +1,11 @@
+
+singletonObjects
+(singletonsCurrentlyInCreation)
+earlySingletonObjects
+singletonFactories
+
+singletonObjects 最后初始化的单例对象
+singletonsCurrentlyInCreation 在创建中，不属于三级缓存
+earlySingletonObjects 未创建完的单例对象
+singletonFactories 单例对象的创建工厂方法（提供创建方法）
+里面synchronized，并提供双查机制，防止充分调用创建方法

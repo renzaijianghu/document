@@ -1,1 +1,3 @@
 
+propertyedit 主要用来string类型到object
+conversionService 则可以object到object

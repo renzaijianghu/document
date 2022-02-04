@@ -1,1 +1,27 @@
 内省机制获取get或set值，通过反射调用
+PropertyDescriptor 获取
+User user = new User();
+        // 获取Property描述器
+        PropertyDescriptor descriptor = new PropertyDescriptor("username", User.class);
+        // 获取setter方法(setUsername())
+        Method writeMethod = descriptor.getWriteMethod();
+        // set值(user.setUserName("carl"))
+        writeMethod.invoke(user, "carl");
+        // 获取getter方法(getUsername())
+        Method readMethod = descriptor.getReadMethod();
+        // 调用getter方法(getUsername())
+        Object result = readMethod.invoke(user);
+        System.out.println(result);
+
+BeanInfo beanInfo = Introspector.getBeanInfo(User.class);
+        PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
+        for(PropertyDescriptor propertyDescriptor : propertyDescriptors){
+            if("username".equals(propertyDescriptor.getName())){
+                Method writeMethod = propertyDescriptor.getWriteMethod();
+                writeMethod.invoke(user, "carl");
+            }
+            if("age".equals(propertyDescriptor.getName())){
+                Method writeMethod = propertyDescriptor.getWriteMethod();
+                writeMethod.invoke(user, 26);
+            }
+        }

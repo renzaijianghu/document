@@ -1,0 +1,3 @@
+请求 客户端->前端控制器（DispatcherServlet）->处理器映射器（HandlerMapping）
+返回给DispatcherServlet HandleExecutionChain(拦截器和处理器)
+处理器适配器HandleAdapt封装调用handler，返回modleandiew 给DispatcherServlet 用试图解析器解析

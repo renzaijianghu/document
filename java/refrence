@@ -6,4 +6,7 @@
 弱webk gc就回收
 虚phantom 相当于没有引用，随时会被回收
 
+refrence四种状态，active(有强引用)，pending（失去强引用，gc进入pending队列），
+enqueued（指定RefrenceQueue从pending进入enqueued）,inactive（enqueued poll或者enqueued的 直接inavtive）
+
 RefrenceQueue

@@ -1,0 +1,3 @@
+
+invokeBeanFactoryPostProcessors如果工厂是BeanDefinitionRegistry，先调用invokeBeanDefinitionRegistryPostProcessors，后调用invokeBeanFactoryPostProcessors
+，先调用PriorityOrdered后调用Ordered，再其他

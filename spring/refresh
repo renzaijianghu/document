@@ -1,4 +1,26 @@
+prepareRefresh：、时间，激活状态，initPropertySources，监听器和事件
+obtainFreshBeanFactory，刷新beanfactory，并获取beanfactory
+prepareBeanFactory ：设在classloader，setBeanExpressionResolver，
+  addPropertyEditorRegistrar，增加ApplicationContextAwareProcessor，并忽略这些aware
+  注册beanfactory等类型的bean
+  Register default environment beans.
+
+
 
 invokeBeanFactoryPostProcessors 1.如果工厂是BeanDefinitionRegistry，先调用invokeBeanDefinitionRegistryPostProcessors，后调用invokeBeanFactoryPostProcessors
 ，先调用PriorityOrdered后调用Ordered，再其他
 2.再查看库中的BeanPostProcess（beanFactory.getBeanNamesForType）如果有没有执行的，再执行一次，顺序一样
+
+registerBeanPostProcessors 也是按照上面顺序
+
+initMessageSource 初始化相关bean，没有的new，有的改造
+initApplicationEventMulticaster初始化事件多播，没有的new，有的改造
+onRefresh
+registerListeners 把ApplicationListener增加为listenser
+finishBeanFactoryInitialization 
+1.Initialize conversion service for this context
+2.EmbeddedValueResolver
+3.Initialize LoadTimeWeaverAware beans
+4.setTempClassLoader
+5.freezeConfiguration
+6.preInstantiateSingletons

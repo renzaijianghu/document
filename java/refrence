@@ -5,3 +5,5 @@
 软soft 内存不够时gc释放
 弱webk gc就回收
 虚phantom 相当于没有引用，随时会被回收
+
+RefrenceQueue

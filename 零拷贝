@@ -2,3 +2,4 @@ mmap
 sendfile
 传递的是文件描述符，不是流
 堆外内存释放
+DirectByteBuffer 回收后，Cleaner会到pending队列，因为是Cleaner类型，会被调用clean方法，而不会enqueued

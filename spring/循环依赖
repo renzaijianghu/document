@@ -1,4 +1,4 @@
 三级缓存
-signelonObjects 创建好的单例
-earlySignelonObjects 没有填充属性和初始化的单例
-factorySingelonObject 函数式接口，为了防止aop重复
+signletonObjects 创建好的单例
+earlySignletonObjects 没有填充属性和初始化的单例，每之间用锁，考虑性能问题，如果没有aop，这个以及够了
+factorySingletonObject 函数式接口，为了防止aop重复

@@ -2,3 +2,7 @@
 signletonObjects 创建好的单例
 earlySignletonObjects 没有填充属性和初始化的单例，每之间用锁，考虑性能问题，如果没有aop，这个以及够了 （双重检查锁，双查机制）
 factorySingletonObject 函数式接口，为了防止aop重复（调用后存入二级缓存，可以保证只创建一次，解决aop的重复代理问题），解决循环依赖，解耦
+
+
+
+先进三级缓存，循环依赖时需要的话getEarlyBeanReference（里面进行aop等会改变对象地址的操作），然后放入二级缓存

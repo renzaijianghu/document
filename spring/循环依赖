@@ -6,3 +6,4 @@ factorySingletonObject 函数式接口，为了防止aop重复（调用后存入
 
 
 先进三级缓存，循环依赖时需要的话getEarlyBeanReference（里面进行aop等会改变对象地址的操作），然后放入二级缓存
+doGetBean时，都是先查三级缓存，一级缓存有直接一级拿，一级没二级有二级拿，二级没有三级有，调用三级的函数式接口拿到后，放到二级
